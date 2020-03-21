@@ -1,0 +1,21 @@
+{
+  "name": "junking",
+  "version": "1.0.9",
+  "description": "node实现命令行工具",
+  "main": "index.js",
+  "bin": {
+    "junking": "./index.js"
+  },
+  "scripts": {},
+  "author": "Junking",
+  "license": "MIT",
+  "dependencies": {
+    "yargs": "^15.3.1"
+  },
+  "keywords": [
+    "npm",
+    "cli",
+    "命令行工具",
+    "重置npm源"
+  ]
+}
