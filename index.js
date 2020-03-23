@@ -43,7 +43,7 @@ var argv = require('yargs')
         child_process.execSync('git commit -m "'+yargs.argv._[1]+'" .');
         console.log('git push -u origin master');
         child_process.execSync('git push -u origin master');
-        console.log('✅ docsify启动成功！ 🚗');
+        console.log('✅ git push到'+child_process.execSync('git remote -v')+'成功 🚗');
     })
     .usage(`      _                   _      _                 
      | |  _   _   _ __   | | __ (_)  _ __     __ _ 🚀☁️
