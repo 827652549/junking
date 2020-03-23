@@ -30,7 +30,7 @@ var argv = require('yargs')
     .command("docs", '启动docsify', function (yargs) {
         console.log('执行命令：💤')
         console.log('docsify serve docs');
-        child_process.execSync('docsify serve docs');
+        child_process.execSync('docsify serve docs',{stdio: 'inherit'});
         console.log('✅ docsify启动成功！ 🚗');
     })
     .command("push", '提交主分支到远程仓库', function (yargs) {
@@ -43,7 +43,7 @@ var argv = require('yargs')
         child_process.execSync('git commit -m "'+yargs.argv._[1]+'" .');
         console.log('git push -u origin master');
         child_process.execSync('git push -u origin master');
-        console.log('✅ git push到'+child_process.execSync('git remote -v')+'成功 🚗');
+        console.log('✅ git push 成功 🚗');
     })
     .usage(`      _                   _      _                 
      | |  _   _   _ __   | | __ (_)  _ __     __ _ 🚀☁️
