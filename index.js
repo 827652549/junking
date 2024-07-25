@@ -2,6 +2,20 @@
 let CountMD = require('./countMD')
 var child_process = require('child_process')
 var argv = require('yargs').
+  command('npmd', '打开 gitlab npm deploy 发布页面', function (yargs) {
+    console.log('执行命令：💤','npmd','打开 gitlab npm deploy 发布页面')
+    // console.log('npm config set registry https://registry.npmjs.org')
+  try{
+    const git_remote_origin = child_process.execSync('git config --get remote.origin.url').toString().trim()
+    const curr_branch = child_process.execSync('git rev-parse --abbrev-ref HEAD').toString().trim()
+    const gitlab_url = git_remote_origin.replace('git@', 'http://').replace('com:', 'com/').replace('.git', '/')+'npm_deploys/'+curr_branch
+    child_process.execSync(
+        'open '+gitlab_url)
+    console.log('✅ 打开：官方npm deploy源📁：'+gitlab_url)
+  }catch (e) {
+    console.log('❌ 请在git项目根目录下执行此命令',e)
+  }
+  }).
   command('npm源', '设置npm源为官方源', function (yargs) {
     console.log('执行命令：💤')
     console.log('npm config set registry https://registry.npmjs.org')
