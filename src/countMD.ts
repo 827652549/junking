@@ -1,11 +1,12 @@
+import fs from 'fs'
+import path from 'path'
+
 /**
  * 统计Markdown字数和行数
  * @param pathStr
  * @constructor
  */
 function CountMD(pathStr = '.'){
-  let fs = require('fs')
-  let path = require('path')
 
 // 获取命令行参数
   let parm = process.argv.splice(2)
@@ -22,9 +23,9 @@ function CountMD(pathStr = '.'){
   let wordsCount = 0
 
 // 获取行数
-  async function line(path) {
-    let rep = await fs.readFileSync(path)
-    rep = rep.toString()
+  async function line(path:string) {
+    let repBuffer = fs.readFileSync(path)
+    const rep = repBuffer.toString()
     let len = rep.match(
       /([\u0800-\u4e00]+?|[\u4e00-\u9fa5]+?|[a-zA-Z0-9]+|[，："、【】。；「」《》？！…（）])/g
     ).length
@@ -35,7 +36,7 @@ function CountMD(pathStr = '.'){
   }
 
 // 递归所有文件夹统计
-  async function start(pt) {
+  async function start(pt:string) {
     let files = fs.readdirSync(pt)
     files
     .map(file => {
@@ -66,5 +67,4 @@ function CountMD(pathStr = '.'){
   })()
 }
 
-// CountMD()
-module.exports =  CountMD
+export {CountMD}
