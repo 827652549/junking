@@ -42,9 +42,9 @@ const argv = yargs.command('npmd', '打开 gitlab npm deploy 发布页面', func
   child_process.execSync('npm version ' + (yargs.argv as Argv)._[1])
   console.log('npm publish')
   child_process.execSync('npm publish')
-  console.log('npm config set registry https://registry.npm.taobao.org')
-  child_process.execSync(
-      'npm config set registry https://registry.npm.taobao.org')
+  // console.log('npm config set registry https://registry.npm.taobao.org')
+  // child_process.execSync(
+  //     'npm config set registry https://registry.npm.taobao.org')
   console.log('✅ 发布成功！🎉')
 }).command('docs', '启动docsify', function (yargs) {
   console.log('执行命令：💤')
