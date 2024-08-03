@@ -1,5 +1,6 @@
 const path = require('path');
 const ForkTsCheckerWebpackPlugin = require('fork-ts-checker-webpack-plugin');
+const { BannerPlugin } = require('webpack');
 
 module.exports = {
     target: 'node',
@@ -30,7 +31,11 @@ module.exports = {
         ],
     },
     plugins: [
-        new ForkTsCheckerWebpackPlugin()
+        new ForkTsCheckerWebpackPlugin(),
+        new BannerPlugin({
+            banner: "#!/usr/bin/env node",
+            raw: true
+        })
     ],
     devtool: 'inline-source-map',
 };
