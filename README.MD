@@ -30,3 +30,6 @@ junking npmd                      打开 npm 包对应的 ctrip gitlab 链接
 - [x] 将每个功能拆分成独立的模块，而不是都聚在 index 中
 - [ ] UT
 - [ ] 优化发布版本号
+- [ ] ares, 快速打开当前项目的 ares
+- [ ] cp, 快速打开当前项目的 captain
+- [ ] pp, 快速打开当前项目的 pipline
