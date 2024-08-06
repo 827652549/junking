@@ -1,6 +1,6 @@
 {
   "name": "junking",
-  "version": "1.3.10",
+  "version": "1.3.11",
   "description": "node实现命令行工具",
   "main": "src/index.ts",
   "bin": {
@@ -12,8 +12,9 @@
   ],
   "scripts": {
     "build": "webpack",
-    "test-cli": "node dist/cli.js -h",
+    "test-cli": "npm run build && node dist/cli.js -h",
     "test-cli-fb": "node dist/cli.js fb",
+    "test-cli-npmd": "node dist/cli.js npmd",
     "tsc": "tsc -w"
   },
   "author": "Junking",

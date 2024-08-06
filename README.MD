@@ -26,7 +26,7 @@ junking count [路径（可省略）]     统计Markdown文字字数（后可以
 junking npmd                      打开 npm 包对应的 ctrip gitlab 链接
 ```
 ### RoadMap
-- [ ] 优化代码结构， 聚合常量
-- [ ] 将每个功能拆分成独立的模块，而不是都聚在 index 中
+- [x] 优化代码结构， 聚合常量
+- [x] 将每个功能拆分成独立的模块，而不是都聚在 index 中
 - [ ] UT
 - [ ] 优化发布版本号
