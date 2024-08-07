@@ -25,6 +25,9 @@ junking push [注释]               提交主分支到远程仓库
 junking count [路径（可省略）]     统计Markdown文字字数（后可以跟上需要统计的目录绝对路径，或直接省略或.以遍历整个相对目录）
 junking npmd                      打开 npm 包对应的 ctrip gitlab 链接
 ```
+
+### BugFix
+- fb 命令，日期误判 https://arc.net/e/974DAD63-43A1-43E9-9A8A-438E0D4D7F36
 ### RoadMap
 - [x] 优化代码结构， 聚合常量
 - [x] 将每个功能拆分成独立的模块，而不是都聚在 index 中
